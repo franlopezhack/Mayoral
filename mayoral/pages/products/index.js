@@ -12,6 +12,7 @@ function Products({ data }) {
     const [sortPrice, setSortPrice] = useState(productPrice)
 
     useEffect(() => {
+
         setSortPrice()
     }, [sortPrice])
 
