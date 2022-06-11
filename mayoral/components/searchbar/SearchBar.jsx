@@ -1,6 +1,8 @@
 
-function SearchBar() {
+function SearchBar({data}) {
     return (
+
+
 
         <input type="search" name="search"  placeholder="Nombre producto..." />
 
@@ -8,3 +10,15 @@ function SearchBar() {
 }
 
 export default SearchBar
+
+
+
+export const getStaticProps = async (context) => {
+    const id = context.params.id
+    const response = await fetch('http://localhost:3000/api/products' + id);
+    const data = await response.json();
+
+    return {
+        props: { data }
+    }
+}

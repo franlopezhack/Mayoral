@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Filter from '../../components/Filter/filter';
 import SearchBar from '../../components/searchbar/SearchBar';
 import styles from '../../styles/Products.module.css'
@@ -6,44 +6,47 @@ import styles from '../../styles/Products.module.css'
 function Products({ data }) {
 
 
-    const productPrice = data.map(product => product.price)
-   
+    // const productPrice = data.map(product => product)
 
-    const [sortPrice, setSortPrice] = useState(productPrice)
+
+    const [sortPrice, setSortPrice] = useState(data)
 
     useEffect(() => {
 
         setSortPrice()
     }, [sortPrice])
 
-    function handleHigh(e) {
+    function handleLow() {
         setSortPrice(
-            productPrice.sort((a, b) => a - b)
+            data.sort((a, b) => a.price - b.price)
         )
     }
 
-    console.log(sortPrice)
+    // console.log(data)
 
-    function handleLow(e) {
+    function handleHigh() {
         setSortPrice(
-            productPrice.sort((a, b) => b - a)
+            data.sort((a, b) => b.price - a.price)
         )
     }
 
     return (
         <div className={styles.container}>
             <h1>Productos</h1>
-          <SearchBar/>
-            <Filter
-                handleHigh={handleHigh}
-                handleLow={handleLow}
-            />    
+            <div className={styles.filters}>
+                <SearchBar />
+                <Filter
+                    handleHigh={handleHigh}
+                    handleLow={handleLow}
+                />
+            </div>
+
             <div className={styles.card}>
                 {
                     data.map((products) =>
                         <div className={styles.item} key={products.id}>
                             <img className={styles.img} src={products.image} alt={products} />
-                            <h5> {products.title} {products.id}</h5>
+                            <h5> {products.title}</h5>
                             <div>
                                 <small>{products.price}€</small>
                             </div>
@@ -52,8 +55,6 @@ function Products({ data }) {
                     )
                 }
             </div>
-
-
         </div>
     )
 }
@@ -68,6 +69,8 @@ export const getStaticProps = async () => {
         props: { data }
     }
 }
+
+
 
 
 export default Products
