@@ -50,7 +50,7 @@ function Products({ data }) {
                             <div>
                                 <small>{products.price}€</small>
                             </div>
-                            <button className={styles.button}>Añadir</button>
+                            <button className={styles.button}>AÑADIR</button>
                         </div>
                     )
                 }

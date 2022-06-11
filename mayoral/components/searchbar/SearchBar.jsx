@@ -1,11 +1,9 @@
+import styles from '../../styles/SearchBar.module.css'
 
-function SearchBar({data}) {
+
+function SearchBar({ data }) {
     return (
-
-
-
-        <input type="search" name="search"  placeholder="Nombre producto..." />
-
+        <input className={styles.input} type="search" name="search" placeholder="Nombre producto..." />
     )
 }
 

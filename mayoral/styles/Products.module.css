@@ -30,9 +30,14 @@
 
 .button{
     background-color: rgb(69, 125, 228);
+    border: none;
+    border-radius: 4px ;
     color: white;
+    height: 30px;
     margin-bottom:20px;
     margin-top: 10px;
+    width: 65px;
+
 }
 
 .filters{
