@@ -3,6 +3,20 @@ import Filter from '../../components/Filter/filter';
 import SearchBar from '../../components/searchbar/SearchBar';
 import styles from '../../styles/Products.module.css'
 
+
+
+export const getStaticProps = async () => {
+
+    const response = await fetch('http://localhost:3000/api/products');
+    const data = await response.json();
+
+    return {
+        props: { data }
+    }
+}
+
+
+
 function Products({ data }) {
 
 
@@ -14,6 +28,7 @@ function Products({ data }) {
     useEffect(() => {
 
         setSortPrice()
+
     }, [sortPrice])
 
     function handleLow() {
@@ -34,7 +49,8 @@ function Products({ data }) {
         <div className={styles.container}>
             <h1>Productos</h1>
             <div className={styles.filters}>
-                <SearchBar />
+                <SearchBar
+                products={data} />
                 <Filter
                     handleHigh={handleHigh}
                     handleLow={handleLow}
@@ -58,19 +74,5 @@ function Products({ data }) {
         </div>
     )
 }
-
-
-export const getStaticProps = async () => {
-
-    const response = await fetch('http://localhost:3000/api/products');
-    const data = await response.json();
-
-    return {
-        props: { data }
-    }
-}
-
-
-
 
 export default Products

@@ -25,7 +25,7 @@ export const products = [
   },
   {
     id: '5',
-    title: 'Polo manga  larga',
+    title: 'Camisa manga  larga',
     image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1654948329/Mayoral/polo-pique-blocking-ecofriends-chico_id_22-56124-700-M-4_kfvv0e.jpg',
     price: 19.90
   },
