@@ -1,8 +1,8 @@
 export const products = [
   {
     id: '1',
-    title: 'Polo manga corta',
-    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1654948335/Mayoral/polo-manga-corta-contrastes-chico_id_22-06107-044-M-4_yfe04a.jpg',
+    title: 'Pantalon largo chandl',
+    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1655115405/Mayoral/pantalon-largo-chandal-chico_id_22-06564-027-M-3_pvak1n.jpg',
     price: 12.90
   },
   {
@@ -19,14 +19,14 @@ export const products = [
   },
   {
     id: '4',
-    title: 'Polo manga  larga',
-    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1654948329/Mayoral/polo-manga-corta-ecofriends-texto-chico_id_22-06109-018-M-3_qw2mac.jpg',
+    title: 'Camisa manga  larga',
+    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1655115387/Mayoral/camisa-manga-larga-ecofriends-estampada-chico_id_22-06116-046-M-1_nu0ojl.jpg',
     price: 49.90
   },
   {
     id: '5',
-    title: 'Camisa manga  larga',
-    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1654948329/Mayoral/polo-pique-blocking-ecofriends-chico_id_22-56124-700-M-4_kfvv0e.jpg',
+    title: 'Pantalon largo basico',
+    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1655115382/Mayoral/pantalon-largo-chandal-basico-chico_id_22-00744-036-M-4_xp5luc.jpg',
     price: 19.90
   },
   {
@@ -67,8 +67,8 @@ export const products = [
   },
   {
     id: '12',
-    title: 'Polo manga corta',
-    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1654948329/Mayoral/polo-manga-corta-cuello-mao-chico_id_22-06101-030-M-4_pfqtpq.jpg',
+    title: 'Camisa escofriends',
+    image: 'https://res.cloudinary.com/dj1ethf6d/image/upload/v1655115380/Mayoral/camisa-ecofriends-cuello-mao-chico_id_22-06112-068-M-3_mtumkg.jpg',
     price: 19.90
   },
 ]

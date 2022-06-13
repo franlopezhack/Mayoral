@@ -42,15 +42,37 @@
 }
 
 .filters{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.btn_sort{
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+.input{
+    border: 3px solid rgba(128, 128, 128, 0.209);
+    border-radius:5px; 
+    height: 40px;
+    width: 400px;
+}
+
+@media(max-width:1024px){
+    .input{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 200px;
+    }
 }
 
 @media(max-width:1024px){
     .filters{
         display: flex;
         flex-direction: column-reverse;
+        align-items: center;
         margin-bottom: 10px;
     }
 }

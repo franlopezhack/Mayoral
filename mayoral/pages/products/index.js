@@ -19,7 +19,7 @@ export const getStaticProps = async () => {
 function Products({ data }) {
 
     const [sortPrice, setSortPrice] = useState(data)
-    const [searchTerm, setSearchTerm] = useState('')
+    const [searchProduct, setSearchProduct] = useState('')
 
     useEffect(() => {
 
@@ -44,28 +44,30 @@ function Products({ data }) {
     return (
         <div className={styles.container}>
             <h1>Productos</h1>
-            <input
-                className={styles.input}
-                onChange={event => { setSearchTerm(event.target.value) }}
-                id='city'
-                type="search"
-                name="title"
-
-                placeholder="Nombre producto..." />
             <div className={styles.filters}>
-                <Filter
-                    handleHigh={handleHigh}
-                    handleLow={handleLow}
-                />
+                <input
+                    className={styles.input}
+                    onChange={event => { setSearchProduct(event.target.value) }}
+                    id='city'
+                    type="search"
+                    name="title"
+                    placeholder="Nombre producto..." />
+
+                <div className={styles.btn_sort}>
+                    <Filter
+                        handleHigh={handleHigh}
+                        handleLow={handleLow}
+                    />
+                </div>
             </div>
 
             <div className={styles.card}>
                 {
-                    data.filter((val) => {
-                        if (searchTerm === '') {
-                            return val
-                        } else if (val.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
-                            return val
+                    data.filter((product) => {
+                        if (searchProduct === '') {
+                            return product
+                        } else if (product.title.toLowerCase().includes(searchProduct.toLocaleLowerCase())) {
+                            return product
                         }
                     }).map((products) =>
                         <div className={styles.item} key={products.id}>
