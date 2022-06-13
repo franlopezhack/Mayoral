@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Filter from '../../components/Filter/filter';
-import SearchBar from '../../components/searchbar/SearchBar';
 import styles from '../../styles/Products.module.css'
 
 
@@ -19,11 +18,8 @@ export const getStaticProps = async () => {
 
 function Products({ data }) {
 
-
-    // const productPrice = data.map(product => product)
-
-
     const [sortPrice, setSortPrice] = useState(data)
+    const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
 
@@ -48,9 +44,15 @@ function Products({ data }) {
     return (
         <div className={styles.container}>
             <h1>Productos</h1>
+            <input
+                className={styles.input}
+                onChange={event => { setSearchTerm(event.target.value) }}
+                id='city'
+                type="search"
+                name="title"
+
+                placeholder="Nombre producto..." />
             <div className={styles.filters}>
-                <SearchBar
-                products={data} />
                 <Filter
                     handleHigh={handleHigh}
                     handleLow={handleLow}
@@ -59,7 +61,13 @@ function Products({ data }) {
 
             <div className={styles.card}>
                 {
-                    data.map((products) =>
+                    data.filter((val) => {
+                        if (searchTerm === '') {
+                            return val
+                        } else if (val.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+                            return val
+                        }
+                    }).map((products) =>
                         <div className={styles.item} key={products.id}>
                             <img className={styles.img} src={products.image} alt={products} />
                             <h5> {products.title}</h5>
